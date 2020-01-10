@@ -15,6 +15,13 @@ class String
   end
 
   def count_sentences
-    self.split(/[.!?]/).map{|x| !(x.match(/\w+/).nil?)}.reject{|x| x == false}.size 
+   #binding.pry
+   # self.split(/[.!?]/).map{|x| !(x.match(/\w+/).nil?)}.reject{|x| x == false}.size 
+   new_array = self.split(/[.!?]/)
+   final_array = new_array.delete_if do |word| 
+     #binding.pry
+     word.empty?
+    end
+    final_array.size 
   end
 end
